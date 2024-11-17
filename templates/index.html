@@ -1,12 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pose Detection Stream</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise Selector</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f7f7f7;
+    }
+    h1 {
+      margin: 20px;
+      color: #333;
+    }
+    .exercise-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+    }
+    .exercise-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .exercise-card:hover {
+      transform: scale(1.05);
+    }
+    .exercise-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .exercise-card button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #05ebf7;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    .exercise-card button:hover {
+      background-color: #01f0f9;
+    }
+  </style>
 </head>
 <body>
-    <h1>Live Pose Detection</h1>
-    <img src="{{ url_for('video_feed') }}" alt="Video Feed" style="width: 100%; max-width: 800px; height: auto;">
+  <h1><ins>Choose Your Exercise</ins></h1>
+  <div class="exercise-container">
+    <!-- Bicep Exercise Card -->
+    <div class="exercise-card">
+      <img src="bicep.webp" alt="Bicep Exercise">
+      <button onclick="window.location.href='bicep.html'">Dumbell Bicep Exercise</button>
+    </div>
+
+    <!-- Squats Exercise Card -->
+    <div class="exercise-card">
+      <img src="squat.jpg" alt="Squat Exercise">
+      <button onclick="window.location.href='squat.html'">Squats Exercise</button>
+    </div>
+  </div>
 </body>
 </html>
